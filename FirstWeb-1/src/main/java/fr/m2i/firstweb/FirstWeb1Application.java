@@ -16,6 +16,13 @@ public class FirstWeb1Application implements CommandLineRunner{
 	String appName;
 	
 	
+	@Value("${application.auteur}")
+	String auteur;
+	
+	@Value("${application.version}")
+	String version;
+
+	
 	@Autowired
 	ConfigApp bddConfig;
 	
@@ -28,7 +35,8 @@ public class FirstWeb1Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(bddConfig.getUri());
+		System.out.println("Version : " + version);
+		System.out.println("Auteur : " + auteur);
 		
 	}
 
